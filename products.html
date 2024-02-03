@@ -19,15 +19,20 @@
 
         p{
             margin-top: 0;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:medium;
         }
 
         h3{
-            color: rgb(168, 9, 168);
+            color: purple;
             margin-bottom: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         body{
-            font-family: Georgia, 'Times New Roman', Times, serif
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
         }
 
         .product-container{
@@ -37,22 +42,26 @@
         }
 
         .product {
-            width: 35%;
-            height: 330px;
-            margin: 10px;
-            padding: 25px;
+            width: 480px;
+            max-width: 300x; /* Set a maximum width for the product */
+            height: auto; /* Maintain aspect ratio */
+            margin: 20px;
+            padding: 20px;
+            padding-bottom: 20px;
             background-color: lavender;
             text-align: center;
-
         }
 
-        .product-img{
-            max-width: 20%;
-            max-height: 300px;
-
+        .product img {
+            width: 100%;
+            height: auto;
+            border: 2px solid white;
         }
         
-
+        .button{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: medium;
+        }
 
 
     </style>
@@ -68,10 +77,36 @@
     <section>
         <div class="product-container">
             <div class="product">
-                <img src="images/abaya1.png"
+                    <img src="images/abaya1.png">
+                    <h3> A&F Signature Nobu Abaya</h3>
+                    <p>
+                        Our most popular abaya yet! This elegant piece is a staple in any modest woman's wardrobe. It is a versatile piece that can be both casual and formal.
+                    </p>
+                    <p style="font-size: 20px">
+                        $80.00
+                    </p>
+                    <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                        <i class="fas fa-shopping-cart">Add to cart</i>
+                    </button>
             </div>
+
+            <div class="product">
+                <img src="images/abaya2.png">
+                <h3> A&F Green Nobu Abaya</h3>
+                <p>
+                    The classic Nobu Abaya in an elegant forest green color. Pair this with our forest green modal hijab for the complete look!
+                </p>
+                <p style="font-size: 20px">
+                    $85.00
+                </p>
+                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <i class="fas fa-shopping-cart">Add to cart</i>
+                </button>
         </div>
     </section>
+
+    
+    
 
     <h2></h2>
 
