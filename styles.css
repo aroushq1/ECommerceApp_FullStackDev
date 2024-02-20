@@ -61,3 +61,62 @@ h3{
     color: rgb(168, 9, 168);
     margin-bottom: 0;
 }
+
+#login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+#login-button{
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    color: white;
+    border-color:#4CAF50;
+}
+
+#login-button:hover{
+    background-color:  #45A049;
+    opacity: 1.0;
+}
+
+#username{
+    display:block;
+    margin: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#password{
+    display:block;
+    margin: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#save{
+    display:inline-block;
+    margin: 10px;
+    border: none;
+}
+
+#signup-link{
+    color: #007BFF;
+    margin: 10px;
+    text-decoration: none;
+}
+
+#signup-link:hover{
+    text-decoration: underline;
+}

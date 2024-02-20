@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        @import url("styles.css");
+        
+    </style>
     <title>loginPage</title>
 </head>
     <body>
-        <header>
+        <header class="homepage-header">
             <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-            <h1 style="display: inline;">A&F Boutique</h1><br>
+            <h1 class = "homepage-h1" style="display: inline;">A&F Boutique</h1>
             
         </header>
         <div>
-            <nav>
-                <ul>
-                    <li><a href = "index.html">Homepage</a></li>
-                    <li><a href = "products.html">Product Page</a></li>
-                    <li><a href = "contact.html">Contact Page</a></li>
+            <nav id="homepage-nav">
+                <ul id="homepage-nav">
+                    <a class="homepage-nav-elements" href="index.html">Home</a>
+                    <a class="homepage-nav-elements" href="products.html">Products</a>
+                    <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                    <a class="homepage-nav-elements" href="login.html">Login</a>
                 </ul>
             </nav>
         </div>
 
         <main>
-            <h2 style ="color:blue">Already Have an Account? Sign in Below!</h2><br>
+            <div id="login-form">
+                <h2>Already Have an Account? Sign in Below!</h2><br>
+                
+                <h3><label for="username">Username: </label><br>
+                <input type="text" id ="username" name="username" placeholder="Username"><br></h3>
 
-            <h3><label for="username">Username: </label>
-            <input type="text" id ="username" name="username"><br></h3>
+                <h3><label for="password">Password: </label><br>
+                <input type="password" id ="password" name="password" placeholder="Password"><br></h3>
+                <span>
+                    <input type="checkbox" id="save" name="save">
+                    <label for="save">Would You like to Save Your Login Info? </label>
+                </span>
+                <h3><button id="login-button">Login</button></h3>
 
-            <h3><label for="password">Password: </label>
-            <input type="password" id ="password" name="password"><br></h3>
-
-            <input type="checkbox" id="save" name="save">
-            <label for="save">Would You like to Save Your Login Info? </label>
-
-            <h3><button style="color:blueviolet">Login</button></h3>
-
-<!--We will have to change the link reference to the Sign Up page-->
-            <h2><a href="login.html">New User? Sign Up Here!</a></h2>
+    <!--We will have to change the link reference to the Sign Up page-->
+                <h3><a id="signup-link" href="login.html">New User? Sign Up Here!</a></h3>
+            </div>
 
         </main>
 
-        <footer>
-            <h6>&copy; Fatima Asif, Aroush Qureshi</h6>
+        <footer class="home-footer">
+            <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
         </footer>
     </body>
 </html>
