@@ -9,6 +9,10 @@
     color: white;
 }
 
+p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
 #homepage-nav{
     display: flex;
     justify-content: space-around;
@@ -39,6 +43,7 @@
     margin: 20px;
     border-radius: 4px;
     box-shadow: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .customer-reviews{
