@@ -4,18 +4,7 @@
 <html lang="en">
 <head>
     <style>
-        .button{
-            border-color: purple;
-            background-color: white;
-        }
-        h1{
-            color: purple;
-        }
-
-        h2{
-            color: purple;
-            margin-bottom: 0;
-        }
+        @import url("styles.css");
 
         p{
             margin-top: 0;
@@ -29,24 +18,25 @@
     <!-- Add meta tags, title, and link to styles.css here -->
 </head>
 <body>
-    <header>
+    <header class="homepage-header">
         <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-        <h1 style="display: inline;">A&F Boutique</h1>
+        <h1 class = "homepage-h1" style="display: inline;">A&F Boutique</h1>
             
     </header>
     <div>
-        <nav>
-            <ul>
-                <li><a href="products.html">Product Page</a></li>
-                <li><a href="contact.html">Contact Page</a></li>
-                <li><a href="login.html">Login Page</a></li>
+        <nav id="homepage-nav">
+            <ul id="homepage-nav">
+                <a class="homepage-nav-elements" href="index.html">Home</a>
+                <a class="homepage-nav-elements" href="products.html">Products</a>
+                <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                <a class="homepage-nav-elements" href="login.html">Login</a>
             </ul>
         </nav>
     </div>
 
     <main>
         <!-- About Us Section -->
-        <section class="about-us">
+        <section id="home-about-us" class="about-us">
             <h2>About Us</h2>
             <p style="font-family:Georgia, 'Times New Roman', Times, serif"> 
                 Welcome to A&F Boutique, where fashion meets modesty.  <br> Established in 2024, we are passionate about empowering young women to embrace their unique beauty and express their personal style with confidence. At A&F Boutique, we believe that modesty is a powerful form of self-expression, and our curated collection reflects the perfect blend of contemporary fashion and timeless elegance.
@@ -66,8 +56,8 @@
                 A&F Boutique Team
             </p>
         </section>
-        <section class="shop-now">
-            <button class="button" onclick="window.location.href='products.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+        <section>
+            <button id="shop-now" onclick="window.location.href='products.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
                 Shop now
             </button>
         </section>
@@ -101,8 +91,8 @@
         </section>
     </main>
 
-    <footer>
-        <h6>&copy; Fatima Asif, Aroush Qureshi</h6>
+    <footer class="home-footer">
+        <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
     </footer>
 </body>
 </html>
