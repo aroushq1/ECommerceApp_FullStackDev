@@ -90,16 +90,21 @@ h3{
     opacity: 1.0;
 }
 
-#username{
-    display:block;
+label{
+    display: block;
     margin: 10px;
+}
+
+#username{
+    margin: 10px;
+    padding: 10px;
     background-color: #fff;
     border: none;
     border-radius: 5px;
 }
 
 #password{
-    display:block;
+    padding: 10px;
     margin: 10px;
     background-color: #fff;
     border: none;
