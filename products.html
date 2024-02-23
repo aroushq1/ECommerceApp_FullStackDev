@@ -2,95 +2,34 @@
 <html lang="en">
 <head>
     <style>
-        h1{
-            font-family: cursive;
-            background-color: purple;
-            color: white;
-            text-align: center;
-            padding: 1em;
-
-        }
-
-        h2{
-            color: purple;
-            margin-bottom: 0;
-            text-align: center;
-            font-family: 'Times New Roman', Times, serif
-        }
-        
-
-        p{
-            margin-top: 0;
-            color: black;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size:medium;
-        }
-
-        h3{
-            color: purple;
-            margin-bottom: 0;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        body{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin: 0;
-        }
-
-        .product-container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .product {
-            width: 480px;
-            max-width: 300x; /* Set a maximum width for the product */
-            height: auto; /* Maintain aspect ratio */
-            margin: 20px;
-            padding: 20px;
-            padding-bottom: 20px;
-            background-color: lavender;
-            text-align: center;
-        }
-
-        .product img {
-            width: 100%;
-            height: auto;
-            border: 2px solid white;
-        }
-        
-        .button{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: medium;
-        }
+         @import url("styles.css");
     </style>
 </head>
 
 <body>
-    <header>
-        <img style="display: inline; margin-left: 20px; margin-top: 10px;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-        <h2 style="display: inline; font-size: 30px;" style >A&F Boutique</h1>
-            
+     <header class="homepage-header">
+        <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
+        <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
+                
     </header>
 
     <div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home Page</a></li>
-                <li><a href="contact.html">Contact Page</a></li>
-                <li><a href="login.html">Login Page</a></li>
+        <nav id="homepage-nav">
+            <ul id="homepage-nav">
+                <a class="homepage-nav-elements" href="index.html">Home</a>
+                <a class="homepage-nav-elements" href="products.html">Products</a>
+                <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                <a class="homepage-nav-elements" href="login.html">Login</a>
             </ul>
         </nav>
     </div>
 
-    <h2><u>Abayas</u></h2>
 
     <section>
         <div class="product-container">
             <div class="product">
                     <img src="images/abaya1.png">
-                    <h3> A&F Signature Nobu Abaya</h3>
+                    <h3 class = "h3-products"> A&F Signature Nobu Abaya</h3>
                     <p>
                         Our most popular abaya yet! This elegant piece is a staple in any modest woman's wardrobe. It is a versatile piece that can be both casual and formal.
                     </p>
@@ -145,6 +84,63 @@
                 <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
                     <i class="fas fa-shopping-cart">Add to cart</i>
                 </button>
+            </div>
+
+            <div class="product">
+                <img src="images/abaya5.png">
+                <h3> White Slip Abaya</h3>
+                <p>
+                    An essential piece in any woman's closet.
+                </p>
+                <p style="font-size: 20px">
+                    $78.00
+                </p>
+                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <i class="fas fa-shopping-cart">Add to cart</i>
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="images/abaya6.png">
+                <h3> White Slip Abaya</h3>
+                <p>
+                    An essential piece in any woman's closet.
+                </p>
+                <p style="font-size: 20px">
+                    $78.00
+                </p>
+                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <i class="fas fa-shopping-cart">Add to cart</i>
+                </button>
+             </div>
+
+             <div class="product">
+                <img src="images/abaya7.png">
+                <h3> White Slip Abaya</h3>
+                <p>
+                    An essential piece in any woman's closet.
+                </p>
+                <p style="font-size: 20px">
+                    $78.00
+                </p>
+                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <i class="fas fa-shopping-cart">Add to cart</i>
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="images/abaya8.png">
+                <h3> White Slip Abaya</h3>
+                <p>
+                    An essential piece in any woman's closet.
+                </p>
+                <p style="font-size: 20px">
+                    $78.00
+                </p>
+                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                    <i class="fas fa-shopping-cart">Add to cart</i>
+                </button>
+            </div>
         </div>
     </section>
 

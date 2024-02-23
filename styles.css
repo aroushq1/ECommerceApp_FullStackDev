@@ -63,7 +63,7 @@ p{
     justify-content: center;
 }
 
-h3{
+.h3{
     color: rgb(168, 9, 168);
     margin-bottom: 0;
 }
@@ -131,3 +131,139 @@ label{
 #signup-link:hover{
     text-decoration: underline;
 }
+
+h1{
+    font-family: cursive;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 1em;
+
+}
+
+h2{
+    color: purple;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif
+}
+
+
+p{
+    margin-top: 0;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:medium;
+}
+
+#h3-products{
+    color: purple;
+    margin-bottom: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 480px;
+    max-width: 300x; /* Set a maximum width for the product */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: lavender;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border: 2px solid white;
+}
+
+.button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+}
+
+/* For screens smaller than 768px (tablets and mobile phones) */
+@media only screen and (max-width: 768px) {
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .product {
+      width: 45%;
+      margin: 10px;
+    }
+  }
+  
+  /* For screens larger than 768px (desktop monitors and laptops) */
+  @media only screen and (min-width: 769px) {
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Adjusted to center */
+    }
+  
+    .product {
+      width: 50%;
+      margin: 10px;
+    }
+  }
+  
+  .product-container {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Adjusted to center */
+  }
+  
+  .product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .product img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product p.price {
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .product:hover {
+    background-color: #ffffff;
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .button:hover {
+    background-color: #45A049;
+  }
