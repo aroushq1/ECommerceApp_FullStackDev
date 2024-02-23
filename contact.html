@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ContactPage</title>
+    <style>
+         @import url("styles.css");
+    </style>
 </head>
-    <body>
-        <header>
-            <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-            <h1 style="display: inline;">A&F Boutique</h1><br>
-            
-        </header>
 
-        <div>
-            <nav>
-                <ul>
-                    <li><a href = "index.html">Homepage</a></li>
-                    <li><a href = "products.html">Product Page</a></li>
-                    <li><a href = "contact.html">Contact Page</a></li>
-                </ul>
-            </nav>
-        </div>
+<body>
+     <header class="homepage-header">
+        <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
+        <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
+                
+    </header>
 
+    <div>
+        <nav id="homepage-nav">
+            <ul id="homepage-nav">
+                <a class="homepage-nav-elements" href="index.html">Home</a>
+                <a class="homepage-nav-elements" href="products.html">Products</a>
+                <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                <a class="homepage-nav-elements" href="login.html">Login</a>
+            </ul>
+        </nav>
+    </div>
+    
         <main>
             <h1>Contact Information</h1>
             <h3><p>
@@ -46,8 +50,8 @@
 
         </main>
 
-        <footer>
-            <h6>&copy; Fatima Asif, Aroush Qureshi</h6>
+        <footer class="home-footer">
+            <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
         </footer>
     </body>
 </html>
