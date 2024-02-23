@@ -64,7 +64,7 @@ p{
 }
 
 .h3{
-    color: rgb(168, 9, 168);
+    color: Black;
     margin-bottom: 0;
 }
 
@@ -134,7 +134,7 @@ label{
 
 h1{
     font-family: cursive;
-    background-color: purple;
+    background-color: black;
     color: white;
     text-align: center;
     padding: 1em;
@@ -142,7 +142,7 @@ h1{
 }
 
 h2{
-    color: purple;
+    color: black;
     margin-bottom: 0;
     text-align: center;
     font-family: 'Times New Roman', Times, serif
@@ -157,7 +157,7 @@ p{
 }
 
 #h3-products{
-    color: purple;
+    color: black;
     margin-bottom: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -167,33 +167,6 @@ body{
     margin: 0;
 }
 
-.product-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.product {
-    width: 480px;
-    max-width: 300x; /* Set a maximum width for the product */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px;
-    padding: 20px;
-    padding-bottom: 20px;
-    background-color: lavender;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-    height: auto;
-    border: 2px solid white;
-}
-
-.button{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
-}
 
 /* For screens smaller than 768px (tablets and mobile phones) */
 @media only screen and (max-width: 768px) {
@@ -213,8 +186,7 @@ body{
   @media only screen and (min-width: 769px) {
     .product-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center; /* Adjusted to center */
+      justify-content: space-around;
     }
   
     .product {
@@ -229,7 +201,7 @@ body{
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Adjusted to center */
+    justify-content: space-around;
   }
   
   .product {
@@ -237,8 +209,11 @@ body{
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
-    width: 50%;
+    width: 480px;
+    height: auto;
     text-align: center;
+    height: auto; /* Maintain aspect ratio */
+
   }
   
   .product img {
@@ -262,6 +237,9 @@ body{
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+
   }
   
   .button:hover {
