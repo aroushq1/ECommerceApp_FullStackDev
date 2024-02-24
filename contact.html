@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ContactPage</title>
+    <style>
+         @import url("styles.css");
+    </style>
 </head>
-    <body>
-        <header>
-            <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-            <h1 style="display: inline;">A&F Boutique</h1><br>
-            
-        </header>
 
-        <div>
-            <nav>
-                <ul>
-                    <li><a href = "index.html">Homepage</a></li>
-                    <li><a href = "products.html">Product Page</a></li>
-                    <li><a href = "contact.html">Contact Page</a></li>
-                </ul>
-            </nav>
-        </div>
+<body>
+     <header class="homepage-header">
+        <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
+        <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
+                
+    </header>
 
+    <div>
+        <nav id="homepage-nav">
+            <ul id="homepage-nav">
+                <a class="homepage-nav-elements" href="index.html">Home</a>
+                <a class="homepage-nav-elements" href="products.html">Products</a>
+                <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                <a class="homepage-nav-elements" href="login.html">Login</a>
+            </ul>
+        </nav>
+    </div>
+    
         <main>
-            <h1>Contact Information</h1>
-            <h3><p>
-                Got questions? We're here to assist you. Please contact us through email and we will get back to you as soon as possible.
-            </p></h3><br>
+            <section class="contact-container">
+                <h1 style="color:black; text-align: left; padding: 0px;"> Reach Out To Us!</h1>
+                <p style="text-align: left;">Got questions or feedback? We'd love to hear from you! Feel free to contact us through any of the channels below.</p>
+                <div class="contact-method">
+                    <h2 style="color:black; text-align: left; padding: 0px;"><br> Email</br></h2>
+                    <p style="text-align: left;"> <br>Email us at: AFboutique@gmail.com </br></p>
+                </div>
+                <div class="contact-method">
+                    <h2 style="color:black; text-align: left; padding: 0px;"> Phone</h2>
+                    <p style="text-align: left;"><br> Call us at: 403-924-4628</br></p>
+                </div>
+                <div class="contact-method">
+                    <h2 style="color:black; text-align: left; padding: 0px;"><br>Social Media</br></h1>
+                    <p style="text-align: left;"><br> Connect with A&F on social media!</br></p>
+                    <img src="images/instagram.jpg" alt="Image Unavailable" width = 50px >
+                    <a href="https://www.instagram.com">Our Instagram Page!</a><br>
 
-            <h2 style="color:blue">Contact us!</h2>
-            <h3><p>
-                Our Email: AFboutique@gmail.com<br>
-                Phone Number: 403-924-4628<br>
-            </p></h3>
+                    <img src="images/facebook.png" alt="Image Unavailable" width = 50px >
+                    <a href="https://www.facebook.com">Our Facebook Page!</a><br>
 
-            <h1>Our Social Media Pages</h1>
-
-            <img src="images/instagram.jpg" alt="Image Unavailable" width = 50px >
-            <a href="https://www.instagram.com">Our Instagram Page!</a><br>
-
-            <img src="images/facebook.png" alt="Image Unavailable" width = 50px >
-            <a href="https://www.facebook.com">Our Facebook Page!</a><br>
-
-            <img src="images/twitterx.png" alt="Image Unavailable" width = 50px >
-            <a href="https://www.twitter.com">Our Twitter Page!</a><br>
-
+                    <img src="images/twitterx.png" alt="Image Unavailable" width = 50px >
+                    <a href="https://www.twitter.com">Our Twitter Page!</a><br>
+                </div>
+            </section>
 
         </main>
 
-        <footer>
-            <h6>&copy; Fatima Asif, Aroush Qureshi</h6>
+        <footer class="home-footer">
+            <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
         </footer>
     </body>
 </html>
