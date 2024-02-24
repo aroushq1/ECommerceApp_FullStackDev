@@ -261,3 +261,24 @@ body{
   .button:hover {
     background-color: #45A049;
   }
+
+  .contact-container {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+  }
+
+  .contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+.contact-method a:hover {
+    color: #007BFF;
+}
