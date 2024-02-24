@@ -116,12 +116,6 @@ label{
     border-radius: 5px;
 }
 
-#save{
-    display:inline-block;
-    margin: 10px;
-    border: none;
-}
-
 #signup-link{
     color: #007BFF;
     margin: 10px;
