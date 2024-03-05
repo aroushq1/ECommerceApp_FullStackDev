@@ -68,7 +68,14 @@ p{
     margin-bottom: 0;
 }
 
-#login-form{
+.messagedisplay{
+    background-color: #f9f9f9;
+    border: 2px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#login-form, #signup-form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +93,7 @@ label {
 }
 
 
-#login-button{
+#login-button, #signup-button{
     background-color: #4CAF50;
     padding: 10px;
     border-radius: 5px;
@@ -96,7 +103,7 @@ label {
     border-color:#4CAF50;
 }
 
-#login-button:hover{
+#login-button:hover, #signup-button:hover{
     background-color:  #45A049;
     opacity: 1.0;
 }
@@ -106,7 +113,7 @@ label{
     margin: 10px;
 }
 
-#username, #password{
+#username, #password, #confirm-password, #email{
     margin: 10px;
     padding: 10px;
     background-color: #fff;

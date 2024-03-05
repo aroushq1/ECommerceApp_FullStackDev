@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url("styles.css");
+        
+    </style>
+    <title>SignupPage</title>
+</head>
+    <body>
+        <header class="homepage-header">
+            <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
+            <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
+                    
+        </header>
+    
+        <div>
+            <nav id="homepage-nav">
+                <ul id="homepage-nav">
+                    <a class="homepage-nav-elements" href="index.html">Home</a>
+                    <a class="homepage-nav-elements" href="products.html">Products</a>
+                    <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                    <a class="homepage-nav-elements" href="login.html">Login</a>
+                </ul>
+            </nav>
+        </div>
+    
+        <script>
+            function validatefields(){
+
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirm-password").value;
+                var email = document.getElementById("email").value;
+                var username = document.getElementById("username").value;
+                var errormessage = ""
+                var successmessage = "Success!"
+
+                var specialchar = /[\!\@\#\$\%\^\&\*\(\)\-\_\=\+\[\]\{\}\|\;\:\'\"\,\.\<\>\?\/\`\~]/;
+                var uppercase = /[A-Z]/;
+                var lowercase = /[a-z]/;
+
+                //does password meet requirements?
+                if (password.length < 8 || /\s/.test(password) || !/\d/.test(password) || !specialchar.test(password) || !uppercase.test(password) || !lowercase.test(password)){
+                    errormessage += "Incorrect Password Requirements\n"
+                    console.log(errormessage)
+                }
+
+                var userpattern = /^[A-Za-z][A-Za-z0-9_-]{2,19}$/;
+                //check if the length or space lowercase is incorrect.
+                if (username.length < 3 || username.length > 20 || /\s/.test(username) || !userpattern.test(username)){
+                    errormessage += "Incorrect Username Requirements\n"
+                    console.log(errormessage)
+                }
+
+                var emailpattern = /^[^\s@]+@[^\s@]+\.(com|net|io)$/i;
+                if (!emailpattern.test(email)) {
+                    errormessage += "Invalid Email Address\n";
+                }
+
+                if (password !== confirmPassword) {
+                    errormessage += "Passwords do not match\n";
+                }
+                
+                var newdiv = document.createElement("div");
+                newdiv.className = "message"
+                var newp = document.createElement("p")
+                newp.className = "messagedisplay"
+
+                if (errormessage !== ""){
+                    newp.textContent = errormessage;
+                }else{
+                    newp.textContent = successmessage;
+                }
+
+                var main_elem = document.getElementById("main")
+                main_elem.appendChild(newdiv);
+
+                newdiv.appendChild(newp)
+
+                errormessage = "";
+
+            }
+
+        </script>
+
+
+        <main id="main">
+            <div id="signup-form">
+
+                <h3><label for="username">Username: </label>
+                <input type="text" id ="username" name="username" placeholder="Username" required></h3>
+
+                <h3><label for="password">Password: </label>
+                <input type="password" id ="password" name="password" placeholder="Password" required></h3>
+
+                <h3><label for="confirm-password">Confirm Password: </label>
+                <input type="password" id ="confirm-password" name="confirm-password" placeholder="Confirm Password" required></h3>
+
+                <h3><label for="email">Email: </label>
+                <input type="text" id ="email" name="email" placeholder="yourname@gmail.com" required></h3>
+
+                <h3><button id="signup-button" onclick = "validatefields()">Signup</button></h3>
+
+            </div>
+
+        </main>
+
+        <footer class="home-footer">
+            <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
+        </footer>
+    </body>
+</html>
