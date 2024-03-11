@@ -73,6 +73,8 @@ p{
     border: 2px;
     padding: 10px;
     margin: 20px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #login-form, #signup-form{

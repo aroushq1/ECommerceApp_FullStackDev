@@ -41,45 +41,50 @@
 
                 //does password meet requirements?
                 if (password.length < 8 || /\s/.test(password) || !/\d/.test(password) || !specialchar.test(password) || !uppercase.test(password) || !lowercase.test(password)){
-                    errormessage += "Incorrect Password Requirements\n"
+                    errormessage += "Incorrect Password Requirements<br>"
                     console.log(errormessage)
                 }
 
                 var userpattern = /^[A-Za-z][A-Za-z0-9_-]{2,19}$/;
                 //check if the length or space lowercase is incorrect.
                 if (username.length < 3 || username.length > 20 || /\s/.test(username) || !userpattern.test(username)){
-                    errormessage += "Incorrect Username Requirements\n"
+                    errormessage += "Incorrect Username Requirements<br>"
                     console.log(errormessage)
                 }
 
                 var emailpattern = /^[^\s@]+@[^\s@]+\.(com|net|io)$/i;
                 if (!emailpattern.test(email)) {
-                    errormessage += "Invalid Email Address\n";
+                    errormessage += "Invalid Email Address<br>";
                 }
 
                 if (password !== confirmPassword) {
-                    errormessage += "Passwords do not match\n";
+                    errormessage += "Passwords do not match<br>";
                 }
-                
+
+                //create div elemetn
                 var newdiv = document.createElement("div");
-                newdiv.className = "message"
+                newdiv.id = "message"
+
+                //create p element to go inside div
                 var newp = document.createElement("p")
-                newp.className = "messagedisplay"
+                newp.id = "messagecontent"
 
                 if (errormessage !== ""){
-                    newp.textContent = errormessage;
+                    newp.innerHTML = errormessage;
                 }else{
-                    newp.textContent = successmessage;
+                    newp.innerHTML = successmessage;
                 }
 
                 var main_elem = document.getElementById("main")
-                main_elem.appendChild(newdiv);
+                var existing_message = document.getElementById("messagecontent")
 
-                newdiv.appendChild(newp)
-
-                errormessage = "";
+                if (existing_message !== null){
+                    existing_message.innerHTML = newp.innerHTML;
+                }else{
+                    main_elem.appendChild(newdiv);
+                    newdiv.appendChild(newp);
+                }
             }
-
 
 
         </script>
