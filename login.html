@@ -3,49 +3,96 @@
 <head>
     <style>
         @import url("styles.css");
-        
+        #message-box {
+            display: none; 
+            border: 2px solid;
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .success {
+            border-color: green; 
+        }
     </style>
-    <title>loginPage</title>
+    <title>Login Page</title>
 </head>
-    <body>
-        <header class="homepage-header">
-            <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
-            <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
-                    
-        </header>
+<body>
+    <header class="homepage-header">
+        <img style="display: inline;" src="images/logo.png" alt="logo" width="60" height="50"/>
+        <h1 class="homepage-header" style="display: inline;">A&F Boutique</h1>
+    </header>
     
-        <div>
-            <nav id="homepage-nav">
-                <ul id="homepage-nav">
-                    <a class="homepage-nav-elements" href="index.html">Home</a>
-                    <a class="homepage-nav-elements" href="products.html">Products</a>
-                    <a class="homepage-nav-elements" href="contact.html">Contact</a>
-                    <a class="homepage-nav-elements" href="login.html">Login</a>
-                </ul>
-            </nav>
+    <div>
+        <nav id="homepage-nav">
+            <ul id="homepage-nav">
+                <a class="homepage-nav-elements" href="index.html">Home</a>
+                <a class="homepage-nav-elements" href="products.html">Products</a>
+                <a class="homepage-nav-elements" href="contact.html">Contact</a>
+                <a class="homepage-nav-elements" href="login.html">Login</a>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div id="login-form">
+            <h2>Already Have an Account? Sign in Below!</h2><br>
+
+            <h3><label for="username">Username: </label><br>
+            <input type="text" id="username" name="username" placeholder="Username"><br></h3>
+
+            <h3><label for="password">Password: </label><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br></h3>
+
+            <h3><button id="login-button">Login</button></h3>
+
+            <h3><a id="signup-link" href="signup.html">Don't Have an Account? Sign Up Here!</a></h3>
         </div>
-    
 
-        <main>
-            <div id="login-form">
-                <h2>Already Have an Account? Sign in Below!</h2><br>
+        <div id="message-box"></div>
+    </main>
 
-                <h3><label for="username">Username: </label><br>
-                <input type="text" id ="username" name="username" placeholder="Username"><br></h3>
+    <footer class="home-footer">
+        <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
+    </footer>
 
-                <h3><label for="password">Password: </label><br>
-                <input type="password" id ="password" name="password" placeholder="Password"><br></h3>
+    <!-- JavaScript code -->
+    <script>
+        document.getElementById('login-button').addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('API call was unsuccessful');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var found = false;
+                    data.forEach(user => {
+                        if (user.name === username && user.email === password) {
+                            found = true;
+                        }
+                    });
+                    if (found) {
+                        showMessage('success', 'Login successful!');
+                    } else {
+                        showMessage('error', 'Invalid username or password');
+                    }
+                })
+                .catch(error => {
+                    showMessage('error', error.message);
+                });
+        });
 
-                <h3><button id="login-button">Login</button></h3>
-
-    <!--We will have to change the link reference to the Sign Up page-->
-                <h3><a id="signup-link" href="login.html">Don't Have an Account? Sign Up Here!</a></h3>
-            </div>
-
-        </main>
-
-        <footer class="home-footer">
-            <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
-        </footer>
-    </body>
+        function showMessage(type, message) {
+            var messageBox = document.getElementById('message-box');
+            messageBox.innerHTML = '<p>' + message + '</p>';
+            messageBox.style.display = 'block'; 
+            messageBox.className = type; 
+        }
+    </script>
+</body>
 </html>
