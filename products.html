@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
     <style>
          @import url("styles.css");
     </style>
 </head>
-
 <body>
-     <header class="homepage-header">
+    <header class="homepage-header">
         <img style="display: inline;" src="images/logo.png" alt="logo" width = "60"  height = "50"/>
         <h1 class = "homepage-header" style="display: inline;">A&F Boutique</h1>
                 
@@ -28,19 +30,19 @@
     <section>
         <div class="product-container">
             <div class="product">
-                    <img src="images/abaya1.png">
-                    <h3 class = "h3-products"> A&F Signature Nobu Abaya</h3>
-                    <p>
-                        Our most popular abaya yet! This elegant piece is a staple in any modest woman's wardrobe. It is a versatile piece that can be both casual and formal.
-                    </p>
-                    <p style="font-size: 20px">
-                        $80.00
-                    </p>
-                    <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                        <i class="fas fa-shopping-cart">Add to cart</i>
-                    </button>
+                <img src="images/abaya1.png">
+                <h3 class="h3-products"> A&F Signature Nobu Abaya</h3>
+                <p>
+                    Our most popular abaya yet! This elegant piece is a staple in any modest woman's wardrobe. It is a versatile piece that can be both casual and formal.
+                </p>
+                <p style="font-size: 20px">
+                    $80.00
+                </p>
+                <button class="button" onclick="addToCart('A&F Signature Nobu Abaya', 80.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
+                </button>
             </div>
-
+    
             <div class="product">
                 <img src="images/abaya2.png">
                 <h3> A&F Green Nobu Abaya</h3>
@@ -50,24 +52,25 @@
                 <p style="font-size: 20px">
                     $85.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('A&F Green Nobu Abaya', 85.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
             </div>
-
+    
             <div class="product">
-                    <img src="images/abaya3.png">
-                    <h3> White Slip Abaya</h3>
-                    <p>
-                        An essential piece in any woman's closet.
-                    </p>
-                    <p style="font-size: 20px">
-                        $78.00
-                    </p>
-                    <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                        <i class="fas fa-shopping-cart">Add to cart</i>
-                    </button>
+                <img src="images/abaya3.png">
+                <h3> White Slip Abaya</h3>
+                <p>
+                    An essential piece in any woman's closet.
+                </p>
+                <p style="font-size: 20px">
+                    $78.00
+                </p>
+                <button class="button" onclick="addToCart('White Slip Abaya', 78.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
+                </button>
             </div>
+    
             <div class="product">
                 <img src="images/abaya4.png">
                 <h3> Nahla Cloak Abaya Sky Blue</h3>
@@ -77,10 +80,11 @@
                 <p style="font-size: 20px">
                     $130.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('Nahla Cloak Abaya Sky Blue', 130.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
             </div>
+    
             <div class="product">
                 <img src="images/abaya5.png">
                 <h3> Chocolate Mocha Jilbab</h3>
@@ -90,10 +94,11 @@
                 <p style="font-size: 20px">
                     $85.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('Chocolate Mocha Jilbab', 85.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
             </div>
+    
             <div class="product">
                 <img src="images/abaya6.png">
                 <h3> Al-Zahraa Jilab</h3>
@@ -103,11 +108,12 @@
                 <p style="font-size: 20px">
                     $100.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('Al-Zahraa Jilbab', 100.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
-             </div>
-             <div class="product">
+            </div>
+    
+            <div class="product">
                 <img src="images/abaya7.png">
                 <h3> Black Swan Abaya</h3>
                 <p>
@@ -116,10 +122,11 @@
                 <p style="font-size: 20px">
                     $120.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('Black Swan Abaya', 120.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
             </div>
+    
             <div class="product">
                 <img src="images/abaya8.png">
                 <h3> Silent Steel Abaya</h3>
@@ -127,22 +134,67 @@
                     The Silent Steel Abaya embodies understated sophistication with its neutral grey hue and minimalist design. The perfect abaya for any occasion
                 </p>
                 <p style="font-size: 20px">
+    
                     $120.00
                 </p>
-                <button class="button" onclick="window.location.href='cart.html'" style="font-family:Georgia, 'Times New Roman', Times, serif">
-                    <i class="fas fa-shopping-cart">Add to cart</i>
+                <button class="button" onclick="addToCart('Silent Steel Abaya', 120.00)">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
                 </button>
             </div>
         </div>
     </section>
+
+    <section id="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+    </section>
+
+    <script>
+        let shoppingCart = {};
+
+        function addToCart(productName, productPrice) {
+            if (shoppingCart[productName]) {
+                shoppingCart[productName].quantity++;
+            } else {
+                shoppingCart[productName] = {
+                    productPrice: productPrice,
+                    quantity: 1
+                };
+            }
+
+            updateCart();
+            alert(productName + " has been added to your cart!");
+        }
+
+        function removeProduct(productName) {
+            if (shoppingCart[productName].quantity > 1) {
+                shoppingCart[productName].quantity--;
+            } else {
+                delete shoppingCart[productName];
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const currentCart = document.getElementById('cart-items');
+            currentCart.innerHTML = ''; // Clear previous content
+            for (const [productName, item] of Object.entries(shoppingCart)) {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <p>${productName} - $${item.productPrice} - Quantity: ${item.quantity}</p>
+                    <button class="remove-button" onclick="removeProduct('${productName}')" onmouseover="this.style.backgroundColor='#ff0000'" onmouseout="this.style.backgroundColor=''">Remove</button>
+                `;
+                currentCart.appendChild(cartItem);
+            }
+        }
+
+
+    </script>
 
     <footer class="home-footer">
         <h5>&copy; Fatima Asif, Aroush Qureshi. A&F Boutique. All Rights Reserved.</h5>
     </footer>
 
 </body>
-
-
-
-
 </html>
