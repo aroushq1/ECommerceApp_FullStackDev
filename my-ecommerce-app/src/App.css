@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.product-image {
+  width: 300px; 
+  height: 300px; 
+  margin-top: 50px;
+  margin-left: 50px;
+  padding-right: 1200px;
+}

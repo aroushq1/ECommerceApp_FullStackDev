@@ -8,7 +8,7 @@ function Header() {
         <img src="images/logo.png" alt="logo" width="60" height="50" />
         <h1>Ecommerce Company</h1>
       </header>
-      <nav style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <nav style={{ display: 'flex', justifyContent: 'space-between'}}>
         <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/login">Login</Link>
