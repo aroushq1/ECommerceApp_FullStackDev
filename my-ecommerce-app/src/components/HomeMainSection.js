@@ -17,7 +17,7 @@ function HomeMainSection() {
     }
 
     function handleButtonClick() {
-        navigate("/Productpage");
+        navigate("/products");
     }
 
     function generateStars(numStars) {
@@ -29,7 +29,7 @@ function HomeMainSection() {
     }
 
     return (
-        <div>
+        <div style={{ margin: '10px'}} >
             <section>
                 <h2>About Us</h2>
                 <p> 
