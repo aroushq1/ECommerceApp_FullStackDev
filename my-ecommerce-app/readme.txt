@@ -13,4 +13,10 @@
 4. Styled Components (for styling components):
     - npm install styled-components
 
+5. React useState
+    - import { useState } from 'react'
+
+6. Flask
+    - pip install Flask
+
 
