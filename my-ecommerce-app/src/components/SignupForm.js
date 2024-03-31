@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 function SignupForm() {
-    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [showLoginForm, setShowLoginForm] = useState(false);
 
     function handleButtonClick(){
-        navigate("/login");
+        setShowLoginForm(true)
     };
+
+    if (showLoginForm) {
+        return <LoginForm />;
+    }
 
     function handleSubmit(event){
         event.preventDefault();

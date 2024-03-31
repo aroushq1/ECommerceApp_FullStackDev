@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import SignupForm from './SignupForm';
 
 
 function LoginForm(){
-    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [showSignupForm, setShowSignupForm] = useState(false);
 
     function handleButtonClick() {
-        navigate("/signup");
+        setShowSignupForm(true);
+    }
+
+    if (showSignupForm) {
+        return <SignupForm />;
     }
     
     function fieldsNotEmpty(event){

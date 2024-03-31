@@ -14,7 +14,7 @@ function LoginPage() {
     return (
         <div>
             <Header />
-            {showSignup ? <SignupForm /> : <LoginForm onClick={switchToSignupClicked} />}
+            <LoginForm />
             <Footer />
         </div>
     );
