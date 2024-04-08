@@ -3,26 +3,35 @@ import Header from './Header';
 import ProductList from './ProductList';
 import Cart from './Cart';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useAuthContext } from '../App.is';
 
 const Productpage = () => {
-  // State to manage cart items
   const [cartItems, setCartItems] = useState([]);
+  const { authenticated } = useAuthenticationContext(); 
+  const navigate = useNavigate();
+
+  // Authentication check
+  useEffect(() => {
+    if (!authenticated) {
+      navigate('/login');
+    }
+  }, [authenticated, navigate]);
 
   // Load cart items from local storage on component mount
   useEffect(() => {
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const savedCartItems = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(savedCartItems);
   }, []);
 
   // Save cart items to local storage whenever cartItems change
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
   // Function to handle adding items to the cart
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
-
     if (existingItem) {
       setCartItems(
         cartItems.map((item) =>
@@ -36,16 +45,22 @@ const Productpage = () => {
 
   // Function to handle removing items from the cart
   const removeFromCart = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    }).filter((item) => item.quantity > 0);
+    setCartItems(updatedCartItems);
   };
 
   return (
     <div className="product-page">
       <Header />
-      <table>
+      <table style={{ width: "100%" }}>
         <tbody>
           <tr>
-            <td><ProductList addToCart={addToCart} /></td>
+            <td style={{ verticalAlign: 'top' }}><ProductList addToCart={addToCart} /></td>
             <td style={{ verticalAlign: 'top' }}><Cart cartItems={cartItems} removeFromCart={removeFromCart} /></td>
           </tr>
         </tbody>

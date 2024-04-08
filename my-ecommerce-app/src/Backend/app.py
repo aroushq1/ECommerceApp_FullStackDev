@@ -4,35 +4,6 @@ from flask import request, jsonify
 app = Flask(__name__)
 
 users = []
-
-@app.route('/register', methods=['POST'])
-
-def register():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
-    email = data.get('email')
-
-    # Check if username already exists
-    if any(user['username'] == username for user in users):
-        return jsonify({'error': 'Username already exists'}), 400
-
-    # Add user to the list
-    users.append({'username': username, 'password': password, 'email': email})
-    return jsonify({'message': 'User registered successfully'}), 201
-
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
-
-    # Check if user exists and credentials are correct
-    if any(user['username'] == username and user['password'] == password for user in users):
-        return jsonify({'message': 'Login successful'}), 200
-    else:
-        return jsonify({'error': 'Invalid username or password'}), 401
-
 products = [
     {
         "id": 1,
@@ -105,6 +76,36 @@ products = [
         "image": 'images/product10.jpg'
     }
 ]
+
+@app.route('/register', methods=['POST'])
+
+def register():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    email = data.get('email')
+
+    # Check if username already exists
+    if any(user['username'] == username for user in users):
+        return jsonify({'error': 'Username already exists'}), 400
+
+    # Add user to the list
+    users.append({'username': username, 'password': password, 'email': email})
+    return jsonify({'message': 'User registered successfully'}), 201
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+
+    # Check if user exists and credentials are correct
+    if any(user['username'] == username and user['password'] == password for user in users):
+        return jsonify({'message': 'Login successful'}), 200
+    else:
+        return jsonify({'error': 'Invalid username or password'}), 401
+
+
 
 @app.route('/products', methods=['GET'])
 def get_products():

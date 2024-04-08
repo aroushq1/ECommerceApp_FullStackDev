@@ -6,8 +6,25 @@ import LoginPage from './components/LoginPage';
 import './App.css';
 
 
+const AuthenticationContext = createContext();
+export const useAuthenticationContext = () => useContext(AuthenticationContext);
+export const AuthenticationProvider = ({ children }) => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  return(
+    <AuthContext.Provider value={{ authenticated, setAuthenticated }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const checkLoggedIn = () => {
+    return isLoggedIn;
+  };
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -15,6 +32,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 
