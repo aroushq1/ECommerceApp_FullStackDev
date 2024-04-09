@@ -1,20 +1,17 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-const Cart = ({ cartItems, removeFromCart }) => {
-  // Ensure cartItems is defined before attempting to use reduce
-  const total = cartItems ? cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2) : 0;
-
+function Cart({cart, removeFromCart}) {
   return (
-    <div className="cart">
-      <h1>Shopping Cart</h1>
-      {cartItems && cartItems.map((item) => (
-        <CartItem key={item.id} item={item} onRemoveFromCart={removeFromCart} />
+    <div className="shopping-cart">
+      <h2>Shopping Cart</h2>
+      {cart.map(item => (
+        <CartItem key={item.id} item={item} removeFromCart={removeFromCart}/>
       ))}
-      {/* Display the total with two decimal places */}
-      <h3 style={{ fontWeight: 'normal' }}>Total (in cart): ${total}</h3>
+      <p>Total (in cart): ${cart.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2)}</p>
     </div>
   );
-};
+}
 
 export default Cart;
+

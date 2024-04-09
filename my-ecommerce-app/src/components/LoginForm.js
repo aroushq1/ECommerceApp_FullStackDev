@@ -1,46 +1,85 @@
-import React, { useState } from 'react';
-import SignupForm from './SignupForm';
+import React, {useState, useEffect} from 'react';
+import SignupForm from './SignupForm.js';
+import {useNavigate} from 'react-router-dom';
+import { useAuthContext } from '../App.js';
 
+function LoginForm() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [authMessage, setAuthMessage] = useState("");
+    const [showSignup, setShowSignup] = useState(false);
+    const {authenticated, setAuthenticated} = useAuthContext();
+    const [isInitialRender, setIsInitialRender] = useState(true);
 
-function LoginForm(){
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const [showSignupForm, setShowSignupForm] = useState(false);
+    const navigate = useNavigate();
 
-    function handleButtonClick() {
-        setShowSignupForm(true);
-    }
-
-    if (showSignupForm) {
-        return <SignupForm />;
-    }
-    
-    function fieldsNotEmpty(event){
-        event.preventDefault();
-        if (password === '' || username ===''){
-            setError('All Fields are Required')
-            return;
+    useEffect(()=> {
+        if (isInitialRender){
+            setIsInitialRender(false)
         }
+        else if (authenticated){
+            navigate(`/products`);
+        }
+    },[authenticated])
+    
+    function handleAuthenication() {
+        if (!username || !password) {
+            setAuthMessage("All fields required");
+        }
+        else{
+            fetch('http://127.0.0.1:5000/login',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({'username':username, 'password':password}),
+            })
+            .then(response => {
+                if (response.ok) {
+                    navigate(`/products`)
+                  return response.json();
+                } else {
+                    throw new Error('Authentication failed');
+                }
+            })
+            .then(data => {setAuthMessage(data.authMessage); setAuthenticated(data.authenticated);})
+            .catch(error => setAuthMessage(error));
+    }console.log(authMessage)
+    };
+
+    function gotoSignupForm() {
+        setShowSignup(true); 
     }
 
-    return(
+    if (showSignup) {
+        return <SignupForm />; 
+    }
+
+    return (
         <div>
             <h1>Login</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <form onSubmit={fieldsNotEmpty}>
-                <label htmlFor= "username">Username: </label>
-                <input type= "text" id= "username" name="password" placeholder="Enter your username" onChange={(e) => setUsername(e.target.value)} /><br />
+            <p style={{ color: "red" }}>{authMessage}</p>
 
-                <label htmlFor= "password">Password: </label>
-                <input type= "password" id= "password" name= "password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} /><br />
+            <label>Username: </label>
+            <input
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder='Enter your username'
+            />
+            <br />
 
-                <button>Login</button><br />
-                <button onClick={handleButtonClick}>Switch to Signup</button>
-            </form>
+            <label>Password: </label>
+            <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='Enter your password'
+            />
+            <br />
+
+            <button onClick={handleAuthenication}>Login</button> <br />
+            <button onClick={gotoSignupForm}>Switch to Signup</button>
         </div>
-        
     );
-}
+};
 
 export default LoginForm;

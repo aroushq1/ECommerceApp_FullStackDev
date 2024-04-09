@@ -1,18 +1,19 @@
 import React from 'react';
 
-const CartItem = ({ item, onRemoveFromCart }) => {
-  const { id, name, price, quantity } = item;
+function CartItem({item, removeFromCart}) {
+  function handleRemove() {
+    removeFromCart(item);
+  }
 
   return (
     <div className="cart-item">
-      <img src={item.image} alt={name} style={{ width: '300px', height: '300px' }} />
-      <div>{name}</div>
-      <div>${price}</div>
-      <div>Quantity: {quantity}</div>
-      <div>Total: ${price * quantity}</div>
-      <button onClick={() => onRemoveFromCart(id)}>Remove</button>
+      <img src={item.image} alt={item.name} style={{width: '250px'}}/>
+      <p>{item.name}</p>
+      <p>Quantity: {item.quantity}</p>
+      <p>Total: ${item.quantity * item.price}</p>
+      <button onClick={handleRemove}>Remove</button>
     </div>
   );
-};
+}
 
 export default CartItem;

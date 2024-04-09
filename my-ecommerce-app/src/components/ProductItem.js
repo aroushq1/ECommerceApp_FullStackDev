@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 
-const ProductItem = ({ product, onAddToCart }) => {
+function ProductItem({product: products, addToCart}) {
   const [showDescription, setShowDescription] = useState(false);
 
-  const toggleDescription = () => {
-    setShowDescription(!showDescription);
-  };
 
-  return (
-    <div className="product-item" onMouseEnter={toggleDescription} onMouseLeave={toggleDescription}>
-      <img className="product-image" src={product.image} alt={product.name} />
-      <div>{product.name}</div>
-      <div>${product.price}</div>
-      {showDescription && <div>{product.description}</div>}
-      <button onClick={() => onAddToCart(product)}>Add to Cart</button>
-    </div>
-  );
-};
+  return products.map(function(product){
+    return (
+      <div className="product-item" onMouseEnter={() => setShowDescription(true)} onMouseLeave={() => setShowDescription(false)}>
+        <img src={product.image} alt={product.name} style={{ width: '300px'}} />
+        <p>{product.name}</p>
+        <p>Price: ${product.price}</p>
+        <button onClick={()=>addToCart(product)}>Add to Cart</button>
+        {showDescription && <p>{product.description}</p>}
+      </div>
+    );
+  });
+}
 
 export default ProductItem;
